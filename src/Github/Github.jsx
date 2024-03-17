@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from 'react'
+import { useLoaderData } from 'react-router-dom'
 
 export default function Github() {
-    const [data, setData] = useState([])
-    useEffect(()=>{
-        fetch("https://api.github.com/users/jawadali6688")
-        .then((response) => response.json())
-        .then((data)=> {
-            console.log(data)
-            setData(data)
-        }, [])
-    })
+  const data = useLoaderData();
+  console.log(data)
+    // const [data, setData] = useState([])
+    // useEffect(()=>{
+    //     fetch("https://api.github.com/users/jawadali6688")
+    //     .then((response) => response.json())
+    //     .then((data)=> {
+    //         console.log(data)
+    //         setData(data)
+    //     }, [])
+    // })
   return (
     <div className='flex flex-col gap-14 py-8 bg-gray-200 items-center justify-center'>
       <h1 
@@ -25,4 +28,9 @@ export default function Github() {
       className='w-44 h-44 object-contain rounded-[50%]'/>
     </div>
   )
+}
+
+export const gitHubApiHandle = async () => {
+  const response = await fetch("https://api.github.com/users/jawadali6688")
+  return response.json()         
 }
