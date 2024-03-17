@@ -1,5 +1,5 @@
 import React from "react"
-import { RouterProvider, createBrowserRouter, createRoutesFromElements } from "react-router-dom"
+import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route } from "react-router-dom"
 import Layout from "./Layout"
 import Home from "./Home/Home"
 import About from "./About/About"
@@ -37,6 +37,7 @@ import Github from "./Github/Github"
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path = "/" element = {<Layout/>} >
+      <Route path = "" element = {<Home/>}/>
       <Route path = "about" element = {<About/>}/>
       <Route path = "contact" element = {<Contact/>}/>
       <Route path = "users/:username" element = {<Profile/>}/>

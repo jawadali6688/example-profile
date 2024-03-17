@@ -6,7 +6,8 @@ export default function Profile() {
     <div>
       <h1 
       className='text-center py-8 bg-gray-200 text-orange-700 font-bold text-3xl'
-      >Username is: {username} </h1>
+      >User: {username} </h1>
+      <h1  className='text-center py-8 bg-gray-200 text-orange-700 font-bold text-3xl'>Welcome {username}! </h1>
     </div>
   )
 }
