@@ -6,6 +6,7 @@ import About from "./About/About"
 import Contact from "./Contact/Contact"
 import Profile from "./Profile/Profile"
 import Github, { gitHubApiHandle } from "./Github/Github"
+import AccountPage from "./AccountPage"
 // const router = createBrowserRouter([
 //   {
 //     path: "/",
@@ -40,6 +41,7 @@ const router = createBrowserRouter(
       <Route path = "" element = {<Home/>}/>
       <Route path = "about" element = {<About/>}/>
       <Route path = "contact" element = {<Contact/>}/>
+      <Route path="login" element = {<AccountPage/>}/>
       <Route path = "users/:username" element = {<Profile/>}/>
       <Route 
       loader={gitHubApiHandle}
